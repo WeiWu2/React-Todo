@@ -5,7 +5,7 @@ export default class Todo extends Component{
 render(){
     const {todo, markComplete} = this.props
 
-    const checkCompleted = () => {
+    const checkCompleted = (e) => {
         markComplete(todo)
     }
     return (<div onClick = {checkCompleted} className = {todo.completed === true ? 'completed' : ''}

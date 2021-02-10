@@ -1,6 +1,5 @@
 
 import React, {Component} from 'react';
-import Todo from './Todo'
 
 
 export default class TodoForm extends Component{
@@ -13,14 +12,17 @@ render(){
         e.preventDefault();
         submit();
     }
-
+    const clear = (e) => {
+        e.preventDefault();
+        clearTodo();
+    }
 
     return (<div>
         <form onSubmit={onSubmit}>
         <input type="text" name="todo" onChange={onChange} value={formValues}></input>
         <div></div>
         <button>Add todo</button>
-        <button onClick = {clearTodo}>Clear completed todos</button>
+        <button onClick = {clear}>Clear completed todos</button>
         </form>
 
 
